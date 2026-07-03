@@ -3,281 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - منصة الاستقامة</title>
-    <meta name="description" content="سياسة الخصوصية لمنصة الاستقامة. تعرف على كيفية تعامل التطبيق مع بياناتك.">
-    <!-- خط Tajawal من Google Fonts -->
+    <title id="pageTitle">سياسة الخصوصية - منصة الاستقامة</title>
+    <meta name="description" id="metaDesc" content="سياسة الخصوصية لمنصة الاستقامة. تعرف على كيفية تعامل التطبيق مع بياناتك.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            --primary: #1A2B4C;
+            --primary-light: #2D4373;
+            --primary-soft: rgba(26, 43, 76, 0.04);
+            --primary-border: rgba(26, 43, 76, 0.15);
             --bg: #ffffff;
             --text: #1a1a1a;
-            --title-color: #2d4a32;
-            --section-title: #2d4a32;
+            --text-secondary: #4a4a4a;
+            --title-color: var(--primary);
+            --section-title: var(--primary);
             --border: #e0e0d0;
             --contact-bg: #f8f9f2;
             --contact-border: #e0e0d0;
-            --link: #2d6a4f;
+            --link: var(--primary);
             --meta: #666;
+            --font-size-base: 18px;
+            --font-size-title: 2.2rem;
+            --font-size-section: 1.6rem;
         }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #121212;
-                --text: #e0e0e0;
-                --title-color: #e0e0e0;
-                --section-title: #81c784;
-                --border: #333;
-                --contact-bg: #1f1f1f;
-                --contact-border: #333;
-                --link: #81c784;
-                --meta: #999;
-            }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: var(--bg);
             color: var(--text);
             font-family: 'Tajawal', 'Segoe UI', sans-serif;
-            line-height: 1.8;
+            line-height: 1.9;
+            font-size: var(--font-size-base);
             direction: rtl;
             text-align: right;
             padding: 20px;
+            -webkit-font-smoothing: antialiased;
         }
-
+        body.ltr {
+            direction: ltr;
+            text-align: left;
+        }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 40px auto;
-            padding: 0 20px;
+            padding: 20px 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+            border: 1px solid #f0f0f0;
         }
-
         .title {
-            font-size: 2rem;
+            font-size: var(--font-size-title);
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: var(--title-color);
             text-align: center;
+            letter-spacing: -0.5px;
         }
-
         .meta {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--meta);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
         }
-
         .section {
-            margin: 40px 0;
+            margin: 45px 0;
         }
-
         .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
+            font-size: var(--font-size-section);
+            font-weight: 700;
             color: var(--section-title);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--primary-border);
+            position: relative;
         }
-
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        body.ltr .section-title::after {
+            left: 0;
+            right: auto;
+        }
         .contact-box {
-            background: var(--contact-bg);
-            border: 1px solid var(--contact-border);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 25px 0 20px;
+            background: var(--primary-soft);
+            border: 1px solid var(--primary-border);
+            border-radius: 14px;
+            padding: 25px 30px;
+            margin: 35px 0 25px;
             text-align: right;
         }
-
-        .contact-box p {
-            margin: 5px 0;
-        }
-
+        body.ltr .contact-box { text-align: left; }
+        .contact-box p { margin: 8px 0; font-size: 1.05rem; }
         a {
             color: var(--link);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            transition: color 0.2s;
         }
-
         a:hover {
+            color: var(--primary-light);
             text-decoration: underline;
         }
-
         ul {
             list-style-type: disc;
-            padding-right: 25px;
-            margin: 15px 0;
+            padding-right: 28px;
+            margin: 18px 0;
         }
-
+        body.ltr ul { padding-right: 0; padding-left: 28px; }
         li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
         }
-
         p {
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+        strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+        .lang-switch {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .lang-switch a {
+            margin: 0 10px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: var(--primary-soft);
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-switch a:hover {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .container {
+                padding: 15px 18px;
+            }
+            .title {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
-    <main class="container">
+
+<main class="container" id="content">
+    <!-- المحتوى سيملأ بواسطة JavaScript -->
+</main>
+
+<script>
+(function() {
+    const path = window.location.pathname;
+    const isEnglish = path.startsWith('/en');
+
+    document.body.className = isEnglish ? 'ltr' : '';
+    document.documentElement.lang = isEnglish ? 'en' : 'ar';
+    document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
+
+    const strings = {
+        ar: {
+            title: 'سياسة الخصوصية - منصة الاستقامة',
+            meta: 'سياسة الخصوصية لمنصة الاستقامة. تعرف على كيفية تعامل التطبيق مع بياناتك.',
+            lastUpdate: 'آخر تحديث: 1 يوليو 2026 | تاريخ النفاذ: 1 يوليو 2026',
+            switch: '<a href="/">العربية</a> <a href="/en">English</a>',
+            welcome: 'مرحبًا بكم في منصة الاستقامة.',
+            intro1: 'تحرص منصة الاستقامة على احترام خصوصية مستخدميها، وتلتزم بحماية بياناتهم والتعامل معها بمسؤولية وشفافية، وفقًا لما تقتضيه أفضل الممارسات التقنية والأنظمة ذات العلاقة.',
+            intro2: 'وتوضح هذه السياسة كيفية تعامل التطبيق مع البيانات والمعلومات المتعلقة باستخدامه، والحقوق المتاحة للمستخدمين، والإجراءات المتبعة لحماية تلك البيانات.',
+            intro3: 'يرجى قراءة هذه السياسة بعناية قبل استخدام التطبيق، ويُعد استمرار استخدام التطبيق موافقةً على ما ورد فيها، وذلك في حدود الأنظمة والقوانين المعمول بها.',
+            entity: 'الجهة المسؤولة عن التطبيق',
+            entityName: 'منصة الاستقامة',
+            email: 'البريد الإلكتروني',
+            website: 'الموقع الإلكتروني',
+            s1Title: 'أولًا: التعريفات',
+            s1Text: 'لأغراض هذه السياسة، يكون للمصطلحات الآتية المعاني المبينة أمام كل منها، ما لم يقتض السياق خلاف ذلك:',
+            def1: '<strong>المنصة:</strong> منصة الاستقامة، ويشمل ذلك التطبيق والموقع الإلكتروني والخدمات التابعة لهما.',
+            def2: '<strong>التطبيق:</strong> تطبيق الاستقامة المخصص للأجهزة الذكية.',
+            def3: '<strong>المستخدم:</strong> كل شخص يستخدم التطبيق أو أيًا من خدماته.',
+            def4: '<strong>البيانات الشخصية:</strong> كل معلومة يمكن أن تؤدي، بصورة مباشرة أو غير مباشرة، إلى التعرف على هوية المستخدم.',
+            def5: '<strong>البيانات التقنية:</strong> البيانات التي تنتج عن استخدام التطبيق أو الاتصال بالشبكة، مثل عنوان بروتوكول الإنترنت (IP) أو معلومات الاتصال اللازمة لتقديم الخدمة.',
+            s2Title: 'ثانيًا: نطاق تطبيق السياسة',
+            s2Text1: 'تسري هذه السياسة على جميع مستخدمي تطبيق الاستقامة، وتشمل جميع الخدمات والميزات التي يقدمها التطبيق في إصداره الحالي.',
+            s2Text2: 'ولا تمتد هذه السياسة إلى المواقع أو التطبيقات أو الخدمات التي تملكها أو تديرها جهات خارجية، حتى وإن أمكن الوصول إليها من خلال التطبيق، إذ تخضع تلك الجهات لسياسات الخصوصية الخاصة بها.',
+            s3Title: 'ثالثًا: البيانات التي يتعامل معها التطبيق',
+            s3Text1: 'تلتزم منصة الاستقامة بمبدأ تقليل جمع البيانات، فلا يجمع التطبيق إلا ما يلزم لتقديم الخدمة.',
+            s3Text2: 'في الإصدار الحالي، لا يتطلب التطبيق إنشاء حساب أو تسجيل دخول، ويمكن استخدامه دون تقديم بيانات شخصية لإنشاء حساب.',
+            s3Text3: 'ويقوم التطبيق بحفظ البيانات الآتية محليًا على جهاز المستخدم فقط:',
+            s3Li1: 'الاسم الذي يدخله المستخدم داخل التطبيق.',
+            s3Li2: 'قائمة المواد التي يضيفها إلى المفضلة.',
+            s3Text4: 'وتبقى هذه البيانات محفوظة داخل جهاز المستخدم، ولا يتم إرسالها إلى خوادم منصة الاستقامة في الإصدار الحالي.',
+            s3Text5: 'كما أن التطبيق:',
+            s3Li3: 'لا يستخدم أدوات تحليل الاستخدام (Analytics).',
+            s3Li4: 'لا يستخدم أدوات تتبع المستخدمين.',
+            s3Li5: 'لا يعرض إعلانات.',
+            s3Li6: 'لا يجمع بيانات الموقع الجغرافي.',
+            s3Li7: 'لا يجمع جهات الاتصال.',
+            s3Li8: 'لا يجمع الصور أو الملفات.',
+            s3Li9: 'لا يجمع الميكروفون أو الكاميرا.',
+            s3Text6: 'وللضرورة التشغيلية، قد تتم معالجة بعض البيانات التقنية المؤقتة، مثل عنوان بروتوكول الإنترنت (IP)، أثناء الاتصال بالخادم وتحميل المحتوى، ويكون ذلك لغرض تقديم الخدمة فقط، دون تخزينها بصورة دائمة، أو ربطها بهوية المستخدم، أو استخدامها في إنشاء ملفات تعريف أو تتبع نشاطه.',
+            s4Title: 'رابعًا: الغرض من معالجة البيانات',
+            s4Text1: 'تتم معالجة البيانات الواردة في هذه السياسة بالقدر اللازم لتشغيل التطبيق وتقديم خدماته وتحسين تجربة الاستخدام.',
+            s4Text2: 'وتستخدم البيانات المحفوظة محليًا للأغراض الآتية:',
+            s4Li1: 'حفظ اسم المستخدم داخل التطبيق.',
+            s4Li2: 'حفظ قائمة المفضلة.',
+            s4Li3: 'تخصيص تجربة الاستخدام.',
+            s4Li4: 'المحافظة على تفضيلات المستخدم بين جلسات الاستخدام.',
+            s4Li5: 'ضمان استمرارية عمل بعض وظائف التطبيق.',
+            s4Text3: 'ولا تستخدم هذه البيانات لأي أغراض تسويقية أو دعائية أو إعلانية.',
+            s5Title: 'خامسًا: مشاركة البيانات',
+            s5Text1: 'تلتزم منصة الاستقامة بالحفاظ على خصوصية المستخدمين، ولذلك:',
+            s5Li1: 'لا تبيع البيانات الشخصية.',
+            s5Li2: 'لا تؤجر البيانات.',
+            s5Li3: 'لا ترخص البيانات للغير.',
+            s5Li4: 'لا تتاجر بالبيانات بأي صورة.',
+            s5Li5: 'لا تشارك البيانات الشخصية مع أي طرف خارجي لأغراض تجارية أو إعلانية.',
+            s5Text2: 'ولا يتم الإفصاح عن أي بيانات إلا إذا كان ذلك واجبًا بموجب الأنظمة أو الأوامر القضائية أو لحماية الحقوق المشروعة للمنصة أو مستخدميها، وذلك في الحدود التي يجيزها النظام.',
+            s6Title: 'سادسًا: الروابط والخدمات الخارجية',
+            s6Text1: 'قد يتضمن التطبيق روابط لمواقع إلكترونية أو حسابات رسمية على منصات التواصل الاجتماعي أو أي خدمات خارجية أخرى.',
+            s6Text2: 'وعند انتقال المستخدم إلى تلك الجهات، فإنه يصبح خاضعًا لسياسات الخصوصية وشروط الاستخدام الخاصة بها، ولا تتحمل منصة الاستقامة مسؤولية محتواها أو ممارساتها المتعلقة بالخصوصية أو حماية البيانات.',
+            s7Title: 'سابعًا: أمن المعلومات',
+            s7Text1: 'تلتزم منصة الاستقامة باتخاذ التدابير التقنية والتنظيمية المعقولة لحماية البيانات من الوصول غير المصرح به أو الاستخدام أو التعديل أو الإفصاح أو الإتلاف.',
+            s7Text2: 'ومع ذلك، فإن أي وسيلة لنقل البيانات عبر الإنترنت أو تخزينها إلكترونيًا لا يمكن ضمان أمنها بصورة مطلقة، ولذلك لا يمكن تقديم ضمان كامل بعدم وقوع أي حادث تقني أو أمني خارج عن الإرادة.',
+            s7Text3: 'كما يتحمل المستخدم مسؤولية المحافظة على أمن جهازه، وتحديث نظام التشغيل، واستخدام الوسائل المناسبة لحمايته من الوصول غير المصرح به.',
+            s8Title: 'ثامنًا: الاحتفاظ بالبيانات',
+            s8Text1: 'في الإصدار الحالي، تُحفظ البيانات التي يُدخلها المستخدم داخل التطبيق محليًا على جهازه فقط.',
+            s8Text2: 'ولا تحتفظ منصة الاستقامة بنسخ من هذه البيانات على خوادمها.',
+            s8Text3: 'وتظل البيانات محفوظة إلى أن يقوم المستخدم بحذفها أو إزالة التطبيق أو مسح بيانات التطبيق من جهازه وفقًا لطريقة عمل نظام التشغيل.',
+            s9Title: 'تاسعًا: حقوق المستخدم',
+            s9Text1: 'تحرص منصة الاستقامة على احترام حقوق المستخدم المتعلقة ببياناته.',
+            s9Text2: 'ويجوز للمستخدم، وفقًا لما تسمح به خصائص التطبيق والأنظمة المعمول بها:',
+            s9Li1: 'حذف البيانات المحفوظة داخل التطبيق.',
+            s9Li2: 'إزالة التطبيق في أي وقت.',
+            s9Li3: 'طلب الاستفسار عن هذه السياسة.',
+            s9Li4: 'التواصل مع المنصة بشأن أي استفسار يتعلق بالخصوصية.',
+            s9Li5: 'طلب حذف أي بيانات قد تحتفظ بها المنصة مستقبلًا إذا أصبحت هذه الخدمة متاحة.',
+            s10Title: 'عاشرًا: خصوصية الأطفال',
+            s10Text1: 'تطبيق الاستقامة غير موجه للأطفال دون سن 13 عامًا. نحن لا نجمع عن قصد أي بيانات شخصية من أطفال دون هذا السن.',
+            s10Text2: 'وفي الإصدار الحالي، لا يتطلب التطبيق إنشاء حسابات، ولا يجمع بيانات شخصية للأطفال عن قصد.',
+            s10Text3: 'وإذا تبين للمنصة أن أي بيانات جُمعت على خلاف هذه السياسة أو على خلاف الأنظمة ذات العلاقة، فسيتم اتخاذ الإجراءات المناسبة لمعالجتها أو حذفها متى كان ذلك ممكنًا.',
+            s11Title: 'الحادي عشر: التعديلات على سياسة الخصوصية',
+            s11Text1: 'يجوز لمنصة الاستقامة تعديل هذه السياسة أو تحديثها عند الحاجة، سواء نتيجة تطوير التطبيق أو إضافة خدمات جديدة أو الامتثال للمتطلبات النظامية.',
+            s11Text2: 'وتصبح النسخة المحدثة نافذة من تاريخ نشرها داخل التطبيق أو على الموقع الإلكتروني، ويُنصح المستخدم بمراجعة هذه الصفحة بصورة دورية للاطلاع على آخر التحديثات.',
+            s12Title: 'الثاني عشر: اللغة المعتمدة',
+            s12Text1: 'قد توفر منصة الاستقامة ترجمات لهذه السياسة بلغات أخرى تيسيرًا للمستخدمين.',
+            s12Text2: 'وفي حال وجود أي تعارض أو اختلاف في التفسير بين النسخة العربية وأي ترجمة أخرى، تكون النسخة العربية هي المرجع المعتمد، ما لم يقتض النظام المعمول به خلاف ذلك.',
+            s13Title: 'الثالث عشر: التواصل معنا',
+            s13Text1: 'لأي استفسار أو ملاحظة أو طلب يتعلق بهذه السياسة أو بخصوصية البيانات، يمكن التواصل معنا عبر:',
+            s14Title: 'الرابع عشر: أحكام عامة',
+            s14Text1: 'تشكل هذه السياسة جزءًا من شروط استخدام تطبيق الاستقامة.',
+            s14Text2: 'وإذا أصبح أي حكم من أحكام هذه السياسة غير نافذ أو غير قابل للتطبيق بموجب الأنظمة المعمول بها، فإن ذلك لا يؤثر في صحة أو نفاذ بقية الأحكام.',
+            s14Text3: 'وتُفسر هذه السياسة بما يحقق الغرض منها في حماية خصوصية المستخدمين وتعزيز الشفافية في كيفية تعامل منصة الاستقامة مع البيانات، مع التزام المنصة بتطوير ممارساتها بما يتوافق مع أفضل المعايير المعمول بها في مجال حماية الخصوصية وأمن المعلومات.'
+        },
+        en: {
+            title: 'Privacy Policy - Al-Istiqamah Platform',
+            meta: 'Privacy Policy for Al-Istiqamah platform. Learn how the app handles your data.',
+            lastUpdate: 'Last updated: July 1, 2026 | Effective date: July 1, 2026',
+            switch: '<a href="/">العربية</a> <a href="/en">English</a>',
+            welcome: 'Welcome to Al-Istiqamah Platform.',
+            intro1: 'Al-Istiqamah is committed to respecting user privacy and protecting their data responsibly and transparently, in accordance with best technical practices and applicable regulations.',
+            intro2: 'This policy explains how the app handles data and information related to its use, the rights available to users, and the procedures followed to protect that data.',
+            intro3: 'Please read this policy carefully before using the app. Continued use of the app constitutes acceptance of its terms, within the limits of applicable laws and regulations.',
+            entity: 'Entity responsible for the app',
+            entityName: 'Al-Istiqamah Platform',
+            email: 'Email',
+            website: 'Website',
+            s1Title: '1. Definitions',
+            s1Text: 'For the purposes of this policy, the following terms shall have the meanings set forth below, unless the context requires otherwise:',
+            def1: '<strong>Platform:</strong> Al-Istiqamah Platform, including the app, website, and related services.',
+            def2: '<strong>App:</strong> The Al-Istiqamah application for smart devices.',
+            def3: '<strong>User:</strong> Any person who uses the app or any of its services.',
+            def4: '<strong>Personal Data:</strong> Any information that can directly or indirectly identify a user.',
+            def5: '<strong>Technical Data:</strong> Data resulting from app usage or network connection, such as IP address or connection information necessary to provide the service.',
+            s2Title: '2. Scope of the Policy',
+            s2Text1: 'This policy applies to all users of the Al-Istiqamah app and covers all services and features offered in its current version.',
+            s2Text2: 'This policy does not extend to websites, apps, or services owned or operated by third parties, even if accessible through the app. Those entities are subject to their own privacy policies.',
+            s3Title: '3. Data the App Handles',
+            s3Text1: 'Al-Istiqamah adheres to the principle of data minimization; the app only collects what is necessary to provide the service.',
+            s3Text2: 'In the current version, the app does not require account creation or login, and can be used without providing personal data to create an account.',
+            s3Text3: 'The app stores the following data locally on the user’s device only:',
+            s3Li1: 'The name entered by the user within the app.',
+            s3Li2: 'The list of items added to favorites.',
+            s3Text4: 'This data remains stored on the user’s device and is not sent to Al-Istiqamah servers in the current version.',
+            s3Text5: 'Additionally, the app:',
+            s3Li3: 'Does not use analytics tools.',
+            s3Li4: 'Does not use user tracking tools.',
+            s3Li5: 'Does not display advertisements.',
+            s3Li6: 'Does not collect location data.',
+            s3Li7: 'Does not collect contacts.',
+            s3Li8: 'Does not collect photos or files.',
+            s3Li9: 'Does not access microphone or camera.',
+            s3Text6: 'For operational necessity, temporary technical data such as IP address may be processed during server connection and content loading, solely to deliver the service, without permanent storage, linking to user identity, or use in profiling or activity tracking.',
+            s4Title: '4. Purpose of Data Processing',
+            s4Text1: 'Data mentioned in this policy is processed only to the extent necessary to operate the app, provide its services, and improve user experience.',
+            s4Text2: 'Locally stored data is used for the following purposes:',
+            s4Li1: 'Saving the user’s name within the app.',
+            s4Li2: 'Saving the favorites list.',
+            s4Li3: 'Customizing the user experience.',
+            s4Li4: 'Maintaining user preferences between sessions.',
+            s4Li5: 'Ensuring continued functionality of certain app features.',
+            s4Text3: 'This data is not used for any marketing, promotional, or advertising purposes.',
+            s5Title: '5. Data Sharing',
+            s5Text1: 'Al-Istiqamah is committed to preserving user privacy, and therefore:',
+            s5Li1: 'Does not sell personal data.',
+            s5Li2: 'Does not rent data.',
+            s5Li3: 'Does not license data to third parties.',
+            s5Li4: 'Does not trade data in any form.',
+            s5Li5: 'Does not share personal data with any external party for commercial or advertising purposes.',
+            s5Text2: 'No data is disclosed unless required by law, judicial order, or to protect the legitimate rights of the platform or its users, within the limits permitted by law.',
+            s6Title: '6. External Links and Services',
+            s6Text1: 'The app may contain links to external websites or official accounts on social media platforms or other third-party services.',
+            s6Text2: 'When the user navigates to those entities, they become subject to their respective privacy policies and terms of use. Al-Istiqamah assumes no responsibility for their content or privacy practices.',
+            s7Title: '7. Information Security',
+            s7Text1: 'Al-Istiqamah takes reasonable technical and organizational measures to protect data from unauthorized access, use, alteration, disclosure, or destruction.',
+            s7Text2: 'However, no method of data transmission over the internet or electronic storage is 100% secure; therefore, absolute guarantee cannot be provided against unforeseen technical or security incidents.',
+            s7Text3: 'The user is also responsible for maintaining the security of their device, updating the operating system, and using appropriate means to protect it from unauthorized access.',
+            s8Title: '8. Data Retention',
+            s8Text1: 'In the current version, data entered by the user is stored locally on their device only.',
+            s8Text2: 'Al-Istiqamah does not keep copies of this data on its servers.',
+            s8Text3: 'Data remains stored until the user deletes it, removes the app, or clears the app data from the device according to the operating system’s functionality.',
+            s9Title: '9. User Rights',
+            s9Text1: 'Al-Istiqamah respects user rights regarding their data.',
+            s9Text2: 'The user may, subject to app features and applicable regulations:',
+            s9Li1: 'Delete data stored within the app.',
+            s9Li2: 'Remove the app at any time.',
+            s9Li3: 'Request clarification about this policy.',
+            s9Li4: 'Contact the platform regarding any privacy-related inquiry.',
+            s9Li5: 'Request deletion of any data the platform may hold in the future if such service becomes available.',
+            s10Title: '10. Children’s Privacy',
+            s10Text1: 'The Al-Istiqamah app is not directed to children under the age of 13. We do not knowingly collect personal data from children under this age.',
+            s10Text2: 'In the current version, the app does not require accounts, nor does it intentionally collect personal data from children.',
+            s10Text3: 'If the platform becomes aware that any data has been collected contrary to this policy or applicable regulations, appropriate measures will be taken to address or delete it where possible.',
+            s11Title: '11. Amendments to the Privacy Policy',
+            s11Text1: 'Al-Istiqamah may amend or update this policy as needed, whether due to app development, addition of new services, or compliance with regulatory requirements.',
+            s11Text2: 'The updated version becomes effective upon its publication within the app or on the website. Users are advised to review this page periodically to stay informed of any updates.',
+            s12Title: '12. Governing Language',
+            s12Text1: 'Al-Istiqamah may provide translations of this policy in other languages for user convenience.',
+            s12Text2: 'In the event of any conflict or discrepancy in interpretation between the Arabic version and any translation, the Arabic version shall prevail, unless applicable regulations require otherwise.',
+            s13Title: '13. Contact Us',
+            s13Text1: 'For any inquiries, comments, or requests regarding this policy or data privacy, you may contact us at:',
+            s14Title: '14. General Provisions',
+            s14Text1: 'This policy constitutes part of the terms of use for the Al-Istiqamah app.',
+            s14Text2: 'If any provision of this policy becomes unenforceable or inapplicable under applicable regulations, the validity of the remaining provisions shall not be affected.',
+            s14Text3: 'This policy shall be interpreted in a manner that achieves its purpose of protecting user privacy and enhancing transparency in how Al-Istiqamah handles data, while the platform remains committed to developing its practices in line with the best standards in privacy and information security.'
+        }
+    };
+
+    const s = strings[isEnglish ? 'en' : 'ar'];
+
+    document.getElementById('pageTitle').textContent = s.title;
+    document.getElementById('metaDesc').setAttribute('content', s.meta);
+
+    document.getElementById('content').innerHTML = `
         <article>
+            <div class="lang-switch">${s.switch}</div>
             <header>
-                <h1 class="title">سياسة الخصوصية لمنصة الاستقامة</h1>
-                <p class="meta">آخر تحديث: 1 يوليو 2026 &nbsp;|&nbsp; تاريخ النفاذ: 1 يوليو 2026</p>
+                <h1 class="title">${isEnglish ? 'Privacy Policy' : 'سياسة الخصوصية'} ${isEnglish ? ' – Al-Istiqamah Platform' : 'لمنصة الاستقامة'}</h1>
+                <p class="meta">${s.lastUpdate}</p>
             </header>
 
             <section>
-                <p>مرحبًا بكم في منصة الاستقامة.</p>
-                <p>تحرص منصة الاستقامة على احترام خصوصية مستخدميها، وتلتزم بحماية بياناتهم والتعامل معها بمسؤولية وشفافية، وفقًا لما تقتضيه أفضل الممارسات التقنية والأنظمة ذات العلاقة.</p>
-                <p>وتوضح هذه السياسة كيفية تعامل التطبيق مع البيانات والمعلومات المتعلقة باستخدامه، والحقوق المتاحة للمستخدمين، والإجراءات المتبعة لحماية تلك البيانات.</p>
-                <p>يرجى قراءة هذه السياسة بعناية قبل استخدام التطبيق، ويُعد استمرار استخدام التطبيق موافقةً على ما ورد فيها، وذلك في حدود الأنظمة والقوانين المعمول بها.</p>
+                <p>${s.welcome}</p>
+                <p>${s.intro1}</p>
+                <p>${s.intro2}</p>
+                <p>${s.intro3}</p>
                 <div class="contact-box">
-                    <p><strong>الجهة المسؤولة عن التطبيق:</strong> منصة الاستقامة</p>
-                    <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@istaqim.app">info@istaqim.app</a></p>
-                    <p><strong>الموقع الإلكتروني:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer">https://istaqim.app</a></p>
+                    <p><strong>${s.entity}:</strong> ${s.entityName}</p>
+                    <p><strong>${s.email}:</strong> <a href="mailto:info@istaqim.app">info@istaqim.app</a></p>
+                    <p><strong>${s.website}:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer">https://istaqim.app</a></p>
                 </div>
             </section>
 
-            <section class="section">
-                <h2 class="section-title">أولًا: التعريفات</h2>
-                <p>لأغراض هذه السياسة، يكون للمصطلحات الآتية المعاني المبينة أمام كل منها، ما لم يقتض السياق خلاف ذلك:</p>
-                <ul>
-                    <li><strong>المنصة:</strong> منصة الاستقامة، ويشمل ذلك التطبيق والموقع الإلكتروني والخدمات التابعة لهما.</li>
-                    <li><strong>التطبيق:</strong> تطبيق الاستقامة المخصص للأجهزة الذكية.</li>
-                    <li><strong>المستخدم:</strong> كل شخص يستخدم التطبيق أو أيًا من خدماته.</li>
-                    <li><strong>البيانات الشخصية:</strong> كل معلومة يمكن أن تؤدي، بصورة مباشرة أو غير مباشرة، إلى التعرف على هوية المستخدم.</li>
-                    <li><strong>البيانات التقنية:</strong> البيانات التي تنتج عن استخدام التطبيق أو الاتصال بالشبكة، مثل عنوان بروتوكول الإنترنت (IP) أو معلومات الاتصال اللازمة لتقديم الخدمة.</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">ثانيًا: نطاق تطبيق السياسة</h2>
-                <p>تسري هذه السياسة على جميع مستخدمي تطبيق الاستقامة، وتشمل جميع الخدمات والميزات التي يقدمها التطبيق في إصداره الحالي.</p>
-                <p>ولا تمتد هذه السياسة إلى المواقع أو التطبيقات أو الخدمات التي تملكها أو تديرها جهات خارجية، حتى وإن أمكن الوصول إليها من خلال التطبيق، إذ تخضع تلك الجهات لسياسات الخصوصية الخاصة بها.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">ثالثًا: البيانات التي يتعامل معها التطبيق</h2>
-                <p>تلتزم منصة الاستقامة بمبدأ تقليل جمع البيانات، فلا يجمع التطبيق إلا ما يلزم لتقديم الخدمة.</p>
-                <p>في الإصدار الحالي، لا يتطلب التطبيق إنشاء حساب أو تسجيل دخول، ويمكن استخدامه دون تقديم بيانات شخصية لإنشاء حساب.</p>
-                <p>ويقوم التطبيق بحفظ البيانات الآتية محليًا على جهاز المستخدم فقط:</p>
-                <ul>
-                    <li>الاسم الذي يدخله المستخدم داخل التطبيق.</li>
-                    <li>قائمة المواد التي يضيفها إلى المفضلة.</li>
-                </ul>
-                <p>وتبقى هذه البيانات محفوظة داخل جهاز المستخدم، ولا يتم إرسالها إلى خوادم منصة الاستقامة في الإصدار الحالي.</p>
-                <p>كما أن التطبيق:</p>
-                <ul>
-                    <li>لا يستخدم أدوات تحليل الاستخدام (Analytics).</li>
-                    <li>لا يستخدم أدوات تتبع المستخدمين.</li>
-                    <li>لا يعرض إعلانات.</li>
-                    <li>لا يجمع بيانات الموقع الجغرافي.</li>
-                    <li>لا يجمع جهات الاتصال.</li>
-                    <li>لا يجمع الصور أو الملفات.</li>
-                    <li>لا يجمع الميكروفون أو الكاميرا.</li>
-                </ul>
-                <p>وللضرورة التشغيلية، قد تتم معالجة بعض البيانات التقنية المؤقتة، مثل عنوان بروتوكول الإنترنت (IP)، أثناء الاتصال بالخادم وتحميل المحتوى، ويكون ذلك لغرض تقديم الخدمة فقط، دون تخزينها بصورة دائمة، أو ربطها بهوية المستخدم، أو استخدامها في إنشاء ملفات تعريف أو تتبع نشاطه.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">رابعًا: الغرض من معالجة البيانات</h2>
-                <p>تتم معالجة البيانات الواردة في هذه السياسة بالقدر اللازم لتشغيل التطبيق وتقديم خدماته وتحسين تجربة الاستخدام.</p>
-                <p>وتستخدم البيانات المحفوظة محليًا للأغراض الآتية:</p>
-                <ul>
-                    <li>حفظ اسم المستخدم داخل التطبيق.</li>
-                    <li>حفظ قائمة المفضلة.</li>
-                    <li>تخصيص تجربة الاستخدام.</li>
-                    <li>المحافظة على تفضيلات المستخدم بين جلسات الاستخدام.</li>
-                    <li>ضمان استمرارية عمل بعض وظائف التطبيق.</li>
-                </ul>
-                <p>ولا تستخدم هذه البيانات لأي أغراض تسويقية أو دعائية أو إعلانية.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">خامسًا: مشاركة البيانات</h2>
-                <p>تلتزم منصة الاستقامة بالحفاظ على خصوصية المستخدمين، ولذلك:</p>
-                <ul>
-                    <li>لا تبيع البيانات الشخصية.</li>
-                    <li>لا تؤجر البيانات.</li>
-                    <li>لا ترخص البيانات للغير.</li>
-                    <li>لا تتاجر بالبيانات بأي صورة.</li>
-                    <li>لا تشارك البيانات الشخصية مع أي طرف خارجي لأغراض تجارية أو إعلانية.</li>
-                </ul>
-                <p>ولا يتم الإفصاح عن أي بيانات إلا إذا كان ذلك واجبًا بموجب الأنظمة أو الأوامر القضائية أو لحماية الحقوق المشروعة للمنصة أو مستخدميها، وذلك في الحدود التي يجيزها النظام.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">سادسًا: الروابط والخدمات الخارجية</h2>
-                <p>قد يتضمن التطبيق روابط لمواقع إلكترونية أو حسابات رسمية على منصات التواصل الاجتماعي أو أي خدمات خارجية أخرى.</p>
-                <p>وعند انتقال المستخدم إلى تلك الجهات، فإنه يصبح خاضعًا لسياسات الخصوصية وشروط الاستخدام الخاصة بها، ولا تتحمل منصة الاستقامة مسؤولية محتواها أو ممارساتها المتعلقة بالخصوصية أو حماية البيانات.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">سابعًا: أمن المعلومات</h2>
-                <p>تلتزم منصة الاستقامة باتخاذ التدابير التقنية والتنظيمية المعقولة لحماية البيانات من الوصول غير المصرح به أو الاستخدام أو التعديل أو الإفصاح أو الإتلاف.</p>
-                <p>ومع ذلك، فإن أي وسيلة لنقل البيانات عبر الإنترنت أو تخزينها إلكترونيًا لا يمكن ضمان أمنها بصورة مطلقة، ولذلك لا يمكن تقديم ضمان كامل بعدم وقوع أي حادث تقني أو أمني خارج عن الإرادة.</p>
-                <p>كما يتحمل المستخدم مسؤولية المحافظة على أمن جهازه، وتحديث نظام التشغيل، واستخدام الوسائل المناسبة لحمايته من الوصول غير المصرح به.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">ثامنًا: الاحتفاظ بالبيانات</h2>
-                <p>في الإصدار الحالي، تُحفظ البيانات التي يُدخلها المستخدم داخل التطبيق محليًا على جهازه فقط.</p>
-                <p>ولا تحتفظ منصة الاستقامة بنسخ من هذه البيانات على خوادمها.</p>
-                <p>وتظل البيانات محفوظة إلى أن يقوم المستخدم بحذفها أو إزالة التطبيق أو مسح بيانات التطبيق من جهازه وفقًا لطريقة عمل نظام التشغيل.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">تاسعًا: حقوق المستخدم</h2>
-                <p>تحرص منصة الاستقامة على احترام حقوق المستخدم المتعلقة ببياناته.</p>
-                <p>ويجوز للمستخدم، وفقًا لما تسمح به خصائص التطبيق والأنظمة المعمول بها:</p>
-                <ul>
-                    <li>حذف البيانات المحفوظة داخل التطبيق.</li>
-                    <li>إزالة التطبيق في أي وقت.</li>
-                    <li>طلب الاستفسار عن هذه السياسة.</li>
-                    <li>التواصل مع المنصة بشأن أي استفسار يتعلق بالخصوصية.</li>
-                    <li>طلب حذف أي بيانات قد تحتفظ بها المنصة مستقبلًا إذا أصبحت هذه الخدمة متاحة.</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">عاشرًا: خصوصية الأطفال</h2>
-                <p>تطبيق الاستقامة غير موجه للأطفال دون سن 13 عامًا. نحن لا نجمع عن قصد أي بيانات شخصية من أطفال دون هذا السن.</p>
-                <p>وفي الإصدار الحالي، لا يتطلب التطبيق إنشاء حسابات، ولا يجمع بيانات شخصية للأطفال عن قصد.</p>
-                <p>وإذا تبين للمنصة أن أي بيانات جُمعت على خلاف هذه السياسة أو على خلاف الأنظمة ذات العلاقة، فسيتم اتخاذ الإجراءات المناسبة لمعالجتها أو حذفها متى كان ذلك ممكنًا.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">الحادي عشر: التعديلات على سياسة الخصوصية</h2>
-                <p>يجوز لمنصة الاستقامة تعديل هذه السياسة أو تحديثها عند الحاجة، سواء نتيجة تطوير التطبيق أو إضافة خدمات جديدة أو الامتثال للمتطلبات النظامية.</p>
-                <p>وتصبح النسخة المحدثة نافذة من تاريخ نشرها داخل التطبيق أو على الموقع الإلكتروني، ويُنصح المستخدم بمراجعة هذه الصفحة بصورة دورية للاطلاع على آخر التحديثات.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">الثاني عشر: اللغة المعتمدة</h2>
-                <p>قد توفر منصة الاستقامة ترجمات لهذه السياسة بلغات أخرى تيسيرًا للمستخدمين.</p>
-                <p>وفي حال وجود أي تعارض أو اختلاف في التفسير بين النسخة العربية وأي ترجمة أخرى، تكون النسخة العربية هي المرجع المعتمد، ما لم يقتض النظام المعمول به خلاف ذلك.</p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">الثالث عشر: التواصل معنا</h2>
-                <p>لأي استفسار أو ملاحظة أو طلب يتعلق بهذه السياسة أو بخصوصية البيانات، يمكن التواصل معنا عبر:</p>
-                <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@istaqim.app">info@istaqim.app</a></p>
-                <p><strong>الموقع الإلكتروني:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer">https://istaqim.app</a></p>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">الرابع عشر: أحكام عامة</h2>
-                <p>تشكل هذه السياسة جزءًا من شروط استخدام تطبيق الاستقامة.</p>
-                <p>وإذا أصبح أي حكم من أحكام هذه السياسة غير نافذ أو غير قابل للتطبيق بموجب الأنظمة المعمول بها، فإن ذلك لا يؤثر في صحة أو نفاذ بقية الأحكام.</p>
-                <p>وتُفسر هذه السياسة بما يحقق الغرض منها في حماية خصوصية المستخدمين وتعزيز الشفافية في كيفية تعامل منصة الاستقامة مع البيانات، مع التزام المنصة بتطوير ممارساتها بما يتوافق مع أفضل المعايير المعمول بها في مجال حماية الخصوصية وأمن المعلومات.</p>
-            </section>
+            <section class="section"><h2 class="section-title">${s.s1Title}</h2><p>${s.s1Text}</p><ul><li>${s.def1}</li><li>${s.def2}</li><li>${s.def3}</li><li>${s.def4}</li><li>${s.def5}</li></ul></section>
+            <section class="section"><h2 class="section-title">${s.s2Title}</h2><p>${s.s2Text1}</p><p>${s.s2Text2}</p></section>
+            <section class="section"><h2 class="section-title">${s.s3Title}</h2><p>${s.s3Text1}</p><p>${s.s3Text2}</p><p>${s.s3Text3}</p><ul><li>${s.s3Li1}</li><li>${s.s3Li2}</li></ul><p>${s.s3Text4}</p><p>${s.s3Text5}</p><ul><li>${s.s3Li3}</li><li>${s.s3Li4}</li><li>${s.s3Li5}</li><li>${s.s3Li6}</li><li>${s.s3Li7}</li><li>${s.s3Li8}</li><li>${s.s3Li9}</li></ul><p>${s.s3Text6}</p></section>
+            <section class="section"><h2 class="section-title">${s.s4Title}</h2><p>${s.s4Text1}</p><p>${s.s4Text2}</p><ul><li>${s.s4Li1}</li><li>${s.s4Li2}</li><li>${s.s4Li3}</li><li>${s.s4Li4}</li><li>${s.s4Li5}</li></ul><p>${s.s4Text3}</p></section>
+            <section class="section"><h2 class="section-title">${s.s5Title}</h2><p>${s.s5Text1}</p><ul><li>${s.s5Li1}</li><li>${s.s5Li2}</li><li>${s.s5Li3}</li><li>${s.s5Li4}</li><li>${s.s5Li5}</li></ul><p>${s.s5Text2}</p></section>
+            <section class="section"><h2 class="section-title">${s.s6Title}</h2><p>${s.s6Text1}</p><p>${s.s6Text2}</p></section>
+            <section class="section"><h2 class="section-title">${s.s7Title}</h2><p>${s.s7Text1}</p><p>${s.s7Text2}</p><p>${s.s7Text3}</p></section>
+            <section class="section"><h2 class="section-title">${s.s8Title}</h2><p>${s.s8Text1}</p><p>${s.s8Text2}</p><p>${s.s8Text3}</p></section>
+            <section class="section"><h2 class="section-title">${s.s9Title}</h2><p>${s.s9Text1}</p><p>${s.s9Text2}</p><ul><li>${s.s9Li1}</li><li>${s.s9Li2}</li><li>${s.s9Li3}</li><li>${s.s9Li4}</li><li>${s.s9Li5}</li></ul></section>
+            <section class="section"><h2 class="section-title">${s.s10Title}</h2><p>${s.s10Text1}</p><p>${s.s10Text2}</p><p>${s.s10Text3}</p></section>
+            <section class="section"><h2 class="section-title">${s.s11Title}</h2><p>${s.s11Text1}</p><p>${s.s11Text2}</p></section>
+            <section class="section"><h2 class="section-title">${s.s12Title}</h2><p>${s.s12Text1}</p><p>${s.s12Text2}</p></section>
+            <section class="section"><h2 class="section-title">${s.s13Title}</h2><p>${s.s13Text1}</p><p><strong>${s.email}:</strong> <a href="mailto:info@istaqim.app">info@istaqim.app</a></p><p><strong>${s.website}:</strong> <a href="https://istaqim.app" target="_blank" rel="noopener noreferrer">https://istaqim.app</a></p></section>
+            <section class="section"><h2 class="section-title">${s.s14Title}</h2><p>${s.s14Text1}</p><p>${s.s14Text2}</p><p>${s.s14Text3}</p></section>
         </article>
-    </main>
+    `;
+})();
+</script>
+
 </body>
 </html>
