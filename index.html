@@ -179,8 +179,9 @@
 
 <script>
 (function() {
-    const path = window.location.pathname;
-    const isEnglish = path.startsWith('/en');
+    // استخدام hash للتمييز: #/en للإنجليزية، وإلا العربية
+    const hash = window.location.hash;
+    const isEnglish = hash === '#/en';
 
     document.body.className = isEnglish ? 'ltr' : '';
     document.documentElement.lang = isEnglish ? 'en' : 'ar';
@@ -191,7 +192,7 @@
             title: 'سياسة الخصوصية - منصة الاستقامة',
             meta: 'سياسة الخصوصية لمنصة الاستقامة. تعرف على كيفية تعامل التطبيق مع بياناتك.',
             lastUpdate: 'آخر تحديث: 1 يوليو 2026 | تاريخ النفاذ: 1 يوليو 2026',
-            switch: '<a href="/">العربية</a> <a href="/en">English</a>',
+            switch: '<a href="#/">العربية</a> <a href="#/en">English</a>',
             welcome: 'مرحبًا بكم في منصة الاستقامة.',
             intro1: 'تحرص منصة الاستقامة على احترام خصوصية مستخدميها، وتلتزم بحماية بياناتهم والتعامل معها بمسؤولية وشفافية، وفقًا لما تقتضيه أفضل الممارسات التقنية والأنظمة ذات العلاقة.',
             intro2: 'وتوضح هذه السياسة كيفية تعامل التطبيق مع البيانات والمعلومات المتعلقة باستخدامه، والحقوق المتاحة للمستخدمين، والإجراءات المتبعة لحماية تلك البيانات.',
@@ -283,7 +284,7 @@
             title: 'Privacy Policy - Al-Istiqamah Platform',
             meta: 'Privacy Policy for Al-Istiqamah platform. Learn how the app handles your data.',
             lastUpdate: 'Last updated: July 1, 2026 | Effective date: July 1, 2026',
-            switch: '<a href="/">العربية</a> <a href="/en">English</a>',
+            switch: '<a href="#/">العربية</a> <a href="#/en">English</a>',
             welcome: 'Welcome to Al-Istiqamah Platform.',
             intro1: 'Al-Istiqamah is committed to respecting user privacy and protecting their data responsibly and transparently, in accordance with best technical practices and applicable regulations.',
             intro2: 'This policy explains how the app handles data and information related to its use, the rights available to users, and the procedures followed to protect that data.',
